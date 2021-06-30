@@ -27,10 +27,12 @@ namespace AKL_CONTENT_TOTE
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(c =>
+            /* services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "AKL_CONTENT_TOTE", Version = "v1"});
-            });
+            }); */
+            // Register the Swagger services
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,8 +41,8 @@ namespace AKL_CONTENT_TOTE
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AKL_CONTENT_TOTE v1"));
+                // app.UseSwagger();
+                // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AKL_CONTENT_TOTE v1"));
             }
 
             app.UseHttpsRedirection();
@@ -50,6 +52,10 @@ namespace AKL_CONTENT_TOTE
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            // Register the Swagger generator and the Swagger UI middlewares
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }
