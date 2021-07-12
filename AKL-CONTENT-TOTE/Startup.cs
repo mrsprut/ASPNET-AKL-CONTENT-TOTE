@@ -44,6 +44,10 @@ namespace AKL_CONTENT_TOTE
                 // app.UseSwagger();
                 // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AKL_CONTENT_TOTE v1"));
             }
+            
+            app.UseWebSockets();
+            
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 
