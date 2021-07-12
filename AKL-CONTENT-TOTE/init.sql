@@ -39,6 +39,6 @@ SELECT * FROM [AKL_CONTENT_TOTE];
 INSERT INTO [AKL_CONTENT_TOTE] ([vlenr], [aufnr], [matnr], [charg], [menge_aufnr], [menge_source],
     [menge_target], [meins], [type_counting], [workstation],
     [pms_user], [pms_date], [pms_time])
-VALUES ('vlenr1', 'aufnr1', 'matnr1', 'charg1', 11.999, 12.999,
-    13.999, NULL, 'S', '01',
-    'user1', '01-07-2021', '12:01:01');
+VALUES ('vlenr10', 'aufnr10', 'matnr10', 'charg10', 101.999, 102.999,
+    103.999, NULL, 'S', '05',
+    'user1', '12-07-2021', '15:20:00');
